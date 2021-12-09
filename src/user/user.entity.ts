@@ -3,16 +3,17 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
-export class User{
-    @PrimaryGeneratedColumn()
+export abstract class student
+{
+    @PrimaryGeneratedColumn('uuid')
     id: string
 
-    @Column()
+    @Column({type: 'varchar', length: 25})
     name: string
 
-    @Column()
+    @Column({type:'number'})
     age: number
 
-    @Column()
+    @Column({type:'boolean', default:false})
     isProgrammer: boolean
 }
