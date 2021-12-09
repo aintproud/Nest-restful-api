@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
-export abstract class student
+export abstract class Student
 {
     @PrimaryGeneratedColumn('uuid')
     id: string
