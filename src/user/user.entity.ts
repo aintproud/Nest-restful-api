@@ -1,19 +1,14 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export abstract class Student
-{
-    @PrimaryGeneratedColumn('uuid')
-    id: string
+export class Student {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column({type: 'varchar', length: 25})
-    name: string
+  @Column()
+  firstName: string;
 
-    @Column({type:'number'})
-    age: number
-
-    @Column({type:'boolean', default:false})
-    isProgrammer: boolean
+  @Column({ default: true })
+  isProgrammer: boolean;
 }
