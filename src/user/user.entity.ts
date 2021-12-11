@@ -3,12 +3,12 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Student {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
-  @Column()
+  @Column({ type: 'varchar', length: 50 })
   firstName: string;
 
-  @Column({ default: true })
+  @Column({ type: 'boolean', default: false })
   isProgrammer: boolean;
 }

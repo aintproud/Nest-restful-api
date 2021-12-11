@@ -1,28 +1,29 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
 import { UpdateStudentDto, CreateStudentDto } from './all-student.dto';
+import { Student } from './user.entity';
 import { UserService } from './user.service';
 
-@Controller('user')
+@Controller('student')
 export class UserController {
     constructor(private readonly userSerice: UserService){}
 
     @Get(':id')
-    async find(@Param('id') id: string){
+    async find(@Param('id') id: string): Promise<UpdateStudentDto>{
         return this.userSerice.findOne(id)
     }
 
-    @Post(':id')
-    async create(@Body() createStudent: CreateStudentDto){
+    @Post()
+    async create(@Body() createStudent: CreateStudentDto): Promise<Student>{
         return this.userSerice.createOne(createStudent)
     }
 
     @Delete(':id')
-    async remove(@Param('id') id: string){
+    async remove(@Param('id') id: string): Promise<UpdateStudentDto>{
         return this.userSerice.removeOne(id)
     }
 
     @Put(':id')
-    async update(@Param('id') id: string, @Body() updateStudentDto: UpdateStudentDto){
-        return this.userSerice.updateOne(id, updateStudentDto)
+    async update(@Param('id') id: string, @Body() createStudentDto: CreateStudentDto): Promise<CreateStudentDto>{
+        return this.userSerice.updateOne(id, createStudentDto)
     }
 }
