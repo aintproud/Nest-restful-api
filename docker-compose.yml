@@ -1,22 +1,22 @@
 version: "3.8"
 services:
   api:
-    # image: lo
+    image: aintproud/nest
+    build:
       dockerfile: Dockerfile 
-      contex: .
-      depends_on:
-        - postgres
-      enviroment:
-        DATABASE_URL:
-          postgres://postgres:password@postgres:3000/test
-        PORT: 2000
-      ports: 
-        - "2000:2000"
+      context: .
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://postgres:password@postgres:3000/test
+      PORT: 3000
+    ports: 
+      - "2000:3000"
   postgres:
     image: postgres:latest
     ports:
-      - "3000:3000"
-    enviroment:
+    - "3000:5432"
+    environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_DB: test

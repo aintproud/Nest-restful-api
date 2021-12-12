@@ -2,7 +2,7 @@ FROM node:latest
 
 WORKDIR /dir/src/app
 
-COPY paccage*.json ./
+COPY package*.json ./
 
 RUN npm i
 
