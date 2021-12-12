@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  api:
+    # image: lo
+      dockerfile: Dockerfile 
+      contex: .
+      depends_on:
+        - postgres
+      enviroment:
+        DATABASE_URL:
+          postgres://postgres:password@postgres:3000/test
+        PORT: 2000
+      ports: 
+        - "2000:2000"
+  postgres:
+    image: postgres:latest
+    ports:
+      - "3000:3000"
+    enviroment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: test
+
+
+
