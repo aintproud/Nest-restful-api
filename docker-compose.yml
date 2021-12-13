@@ -8,20 +8,17 @@ services:
     depends_on:
       - postgres
     environment:
-      DATABASE_URL: postgres://postgres:password@postgres:5432/test
-      PORT: 3000
+      DATABASE_URL: postgres://postgres:password@postgres:5432/postgres
+      PORT: 2000
     ports: 
-      - "2000:3000"
+      - "2000:2000"
   postgres:
     image: postgres:latest
     ports:
-    - "3000:5432"
+    - "5432:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_DB: test
-    volumes:
-      - ./student.sql:/docker-entrypoint-initdb.d/student.sql
-
 
 

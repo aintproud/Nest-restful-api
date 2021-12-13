@@ -9,12 +9,11 @@ import { UserModule } from './user/user.module';
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 3000,
+      port: 5432,
       username: 'postgres',
       password: 'password',
-      database: 'test',
+      database: 'postgres',
       entities: [Student],
-      synchronize: true
   }), UserModule
   ],
   controllers: [AppController],
