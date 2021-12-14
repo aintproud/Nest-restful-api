@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   api:
-    image: aintproud/nest
+    image: aintproud/pow
     build:
       dockerfile: Dockerfile 
       context: .
@@ -10,8 +10,9 @@ services:
     environment:
       DATABASE_URL: postgres://postgres:password@postgres:5432/postgres
       PORT: 2000
-    ports: 
+    ports:
       - "2000:2000"
+    
   postgres:
     image: postgres:latest
     ports:
@@ -19,6 +20,5 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: test
 
 
