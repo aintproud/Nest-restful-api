@@ -1,14 +1,14 @@
 version: "3.8"
 services:
   api:
-    image: nest
+    image: aintproud/nest
     build:
       dockerfile: Dockerfile 
       context: .
     depends_on:
       - postgres
     ports: 
-      - "2000:4000"
+      - "2000:2000"
   postgres:
     image: postgres:latest
     ports:
