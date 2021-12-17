@@ -2,9 +2,9 @@ version: "3.8"
 services:
   api:
     image: aintproud/nest
-    build:
-      dockerfile: Dockerfile 
-      context: .
+    # build:
+    #   dockerfile: Dockerfile 
+    #   context: .
     depends_on:
       - postgres
     ports: 
