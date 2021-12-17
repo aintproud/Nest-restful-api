@@ -12,7 +12,7 @@ import { UserModule } from './user/user.module';
       port: 3000,
       username: 'postgres',
       password: 'password',
-      database: 'test',
+      database: 'postgres',
       entities: [Student],
       synchronize: true,
     }),
