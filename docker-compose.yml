@@ -1,17 +1,14 @@
 version: "3.8"
 services:
   api:
-    image: aintproud/nest
+    image: nest
     build:
       dockerfile: Dockerfile 
       context: .
     depends_on:
       - postgres
-    environment:
-      DATABASE_URL: postgres://postgres:password@postgres:5432/test
-      PORT: 3000
     ports: 
-      - "2000:3000"
+      - "2000:4000"
   postgres:
     image: postgres:latest
     ports:
@@ -20,8 +17,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_DB: test
-    volumes:
-      - ./student.sql:/docker-entrypoint-initdb.d/student.sql
 
 
 

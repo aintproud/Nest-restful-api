@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:16
 
 WORKDIR /dir/src/app
 
@@ -9,7 +9,5 @@ RUN npm i
 COPY . .
 
 RUN npm run build
-
-EXPOSE 2000
 
 CMD ["node", "dist/main"]

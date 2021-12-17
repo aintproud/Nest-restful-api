@@ -1,4 +1,4 @@
-export class CreateStudentDto{
-    readonly firstName: string
-    readonly isProgrammer: boolean
+export class CreateStudentDto {
+  readonly firstName: string;
+  readonly isProgrammer: boolean;
 }
